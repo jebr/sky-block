@@ -1,0 +1,11 @@
+# Berichten van de eilandbescherming en de spelerlistener.
+# Kleurcodes met &, placeholders tussen {}.
+protection:
+  # Een geblokkeerde actie (maximaal 1x per 2 seconden per speler)
+  denied: "&cDat mag je hier niet doen."
+  # Speler probeert een eiland te betreden waar hij verbannen is
+  banned: "&cJe bent verbannen van dit eiland."
+  # Speler probeert een eiland op slot te betreden zonder lid te zijn
+  locked: "&cDit eiland is op slot. Alleen leden mogen erop."
+  # Speler viel in de void en is teruggezet
+  void-saved: "&7Je viel in de void en bent teruggezet. Je spullen zijn bewaard gebleven."

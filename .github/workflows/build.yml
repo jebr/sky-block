@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Java 21 instellen
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Bouwen met Maven
+        shell: bash
+        run: |
+          set -o pipefail
+          mvn -B package 2>&1 | tee build.log
+
+      - name: Fouten samenvatten
+        if: failure()
+        shell: bash
+        run: |
+          # Alle compilerfouten en waarschuwingen in één annotatie, zodat ze zonder login leesbaar zijn
+          errors=$(grep -E '^\[(ERROR|WARNING)\]' build.log | grep -v -E 'Help 1|-e switch|-X switch|full stack|re-run|For more information' | head -c 60000)
+          errors="${errors//'%'/'%25'}"
+          errors="${errors//$'\n'/'%0A'}"
+          echo "::error title=Maven build log::${errors}"
+
+      - name: Jar uploaden
+        uses: actions/upload-artifact@v4
+        with:
+          name: SkyBlock-jar
+          path: target/SkyBlock-*.jar

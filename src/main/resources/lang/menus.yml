@@ -1,0 +1,334 @@
+# Teksten voor alle menu's. Kleurcodes met &, placeholders tussen {}.
+# Lijsten worden als lore gebruikt; losse teksten als naam of chatbericht.
+menus:
+  common:
+    close-name: "&cSluiten"
+    back-name: "&eTerug"
+    back-lore:
+      - "&7Terug naar het hoofdmenu."
+    previous-page: "&ePagina {page} van {pages}"
+    next-page: "&ePagina {page} van {pages}"
+    balance-name: "&6Je saldo"
+    balance-lore:
+      - "&7Saldo: &a{balance}"
+
+  confirm:
+    confirm-name: "&a&lBevestigen"
+    confirm-lore:
+      - "&7Klik om door te gaan."
+    cancel-name: "&c&lAnnuleren"
+    cancel-lore:
+      - "&7Klik om terug te gaan."
+    info-name: "&e{title}"
+    info-lore:
+      - "&7Weet je het zeker?"
+      - "&7Dit kan niet ongedaan worden gemaakt."
+
+  main:
+    title: "&8SkyBlock"
+    create-name: "&a&lEiland maken"
+    create-lore:
+      - "&7Je hebt nog geen eiland."
+      - "&7Klik om je eigen eiland in de lucht"
+      - "&7te krijgen en meteen te beginnen!"
+      - ""
+      - "&eKlik om een eiland te maken"
+    creating: "&7Je eiland wordt gebouwd..."
+    created: "&aJe eiland is klaar! Veel plezier."
+    home-name: "&aNaar huis"
+    home-lore:
+      - "&7Teleporteer naar de home"
+      - "&7van je eiland."
+      - ""
+      - "&eKlik om te teleporteren"
+    level-name: "&bEilandlevel: &f{level}"
+    level-lore:
+      - "&7Eiland: &f{name}"
+      - "&7Level: &f{level}"
+      - "&7Punten: &f{points}"
+      - ""
+      - "&7Het level hangt af van de blokken"
+      - "&7die op je eiland staan."
+      - ""
+      - "&eKlik om opnieuw te berekenen"
+    level-lore-busy:
+      - "&7Eiland: &f{name}"
+      - "&7Level: &f{level}"
+      - "&7Punten: &f{points}"
+      - ""
+      - "&6Bezig met berekenen..."
+    level-started: "&7Je eilandlevel wordt berekend..."
+    level-busy: "&cJe eilandlevel wordt al berekend, even geduld."
+    level-done: "&aJe eilandlevel is nu &e{level}&a."
+    top-name: "&6Topeilanden"
+    top-lore:
+      - "&7Bekijk de eilanden met"
+      - "&7het hoogste level."
+      - ""
+      - "&eKlik om te openen"
+    members-name: "&bLeden"
+    members-lore:
+      - "&7Leden: &f{count}&7/&f{limit}"
+      - ""
+      - "&7Bekijk en beheer de leden"
+      - "&7van je eiland."
+      - ""
+      - "&eKlik om te openen"
+    settings-name: "&dInstellingen"
+    settings-lore:
+      - "&7Bepaal wat bezoekers mogen"
+      - "&7op je eiland."
+      - ""
+      - "&eKlik om te openen"
+    settings-lore-locked:
+      - "&7Bepaal wat bezoekers mogen"
+      - "&7op je eiland."
+      - ""
+      - "&cAlleen voor mede-eigenaars en de eigenaar"
+    upgrades-name: "&6Upgrades"
+    upgrades-lore:
+      - "&7Maak je eiland groter, voeg"
+      - "&7meer leden toe of verbeter"
+      - "&7je generator."
+      - ""
+      - "&eKlik om te openen"
+    warps-name: "&5Eilandwarps"
+    warps-lore:
+      - "&7Bezoek de eilanden van"
+      - "&7andere spelers."
+      - ""
+      - "&eKlik om te openen"
+    challenges-name: "&eChallenges"
+    challenges-lore:
+      - "&7Voltooi opdrachten en"
+      - "&7verdien beloningen."
+      - ""
+      - "&eKlik om te openen"
+    shop-name: "&aShop"
+    shop-lore:
+      - "&7Koop en verkoop items."
+      - ""
+      - "&eKlik om te openen"
+    balance-name: "&6{player}"
+    balance-lore:
+      - "&7Saldo: &a{balance}"
+      - ""
+      - "&7Verdien geld met challenges"
+      - "&7en door items te verkopen."
+    lock-name-open: "&aEiland: open"
+    lock-name-locked: "&cEiland: vergrendeld"
+    lock-lore:
+      - "&7Een vergrendeld eiland kan niet"
+      - "&7door bezoekers worden bezocht"
+      - "&7en staat niet in de warplijst."
+      - ""
+      - "&eKlik om te wisselen"
+    lock-lore-no-permission:
+      - "&7Een vergrendeld eiland kan niet"
+      - "&7door bezoekers worden bezocht."
+      - ""
+      - "&cAlleen voor mede-eigenaars en de eigenaar"
+    locked: "&cJe eiland is nu vergrendeld voor bezoekers."
+    unlocked: "&aJe eiland is weer open voor bezoekers."
+    reset-name: "&4Eiland resetten"
+    reset-lore:
+      - "&7Begin helemaal opnieuw met"
+      - "&7een nieuw starteiland."
+      - ""
+      - "&cLet op: je eiland, je inventory en"
+      - "&calle leden worden verwijderd!"
+      - ""
+      - "&eKlik om te resetten"
+    reset-lore-no-permission:
+      - "&7Begin opnieuw met een nieuw eiland."
+      - ""
+      - "&cAlleen de eigenaar kan dit doen"
+    reset-confirm-title: "&4Eiland resetten?"
+    reset-success: "&aJe eiland is gereset. Succes met je nieuwe start!"
+    reset-cooldown: "&cJe moet nog &e{seconds} &cseconden wachten voordat je opnieuw kunt resetten."
+    reset-max: "&cJe hebt het maximale aantal resets (&e{max}&c) bereikt."
+
+  settings:
+    title: "&8Eilandinstellingen"
+    info-name: "&dEilandinstellingen"
+    info-lore:
+      - "&7Deze instellingen gelden voor"
+      - "&7bezoekers. Leden mogen altijd alles."
+    status-on: "&aAan"
+    status-off: "&cUit"
+    flag-name-on: "&a{flag}"
+    flag-name-off: "&c{flag}"
+    flag-lore:
+      - "&7Status: {status}"
+      - "&7Standaard: {default}"
+      - ""
+      - "&eKlik om te wisselen"
+    flag-lore-locked:
+      - "&7Status: {status}"
+      - "&7Standaard: {default}"
+      - ""
+      - "&cAlleen voor mede-eigenaars en de eigenaar"
+    toggled-on: "&e{flag} &7staat nu &aaan&7."
+    toggled-off: "&e{flag} &7staat nu &cuit&7."
+
+  members:
+    title: "&8Eilandleden"
+    info-name: "&bLeden"
+    info-lore:
+      - "&7Leden: &f{count}&7/&f{limit}"
+      - ""
+      - "&7Nodig spelers uit met"
+      - "&e/is invite <speler>&7."
+      - "&7Meer plek nodig? Bekijk de upgrades."
+    member-name: "&e{player}"
+    member-lore:
+      - "&7Rol: &f{role}"
+      - "&7Status: {status}"
+    online: "&aonline"
+    offline: "&7offline"
+    hint-promote:
+      - ""
+      - "&eLinksklik: &7promoveren tot mede-eigenaar"
+    hint-demote:
+      - ""
+      - "&eLinksklik: &7degraderen tot lid"
+    hint-kick:
+      - "&cShift-klik: &7van het eiland verwijderen"
+    promoted: "&e{player} &ais nu &e{role}&a."
+    demoted: "&e{player} &7is nu &e{role}&7."
+    role-changed: "&7Je rol op het eiland is gewijzigd naar &e{role} &7door &e{player}&7."
+    cannot-kick: "&cJe kunt &e{player} &cniet van het eiland verwijderen."
+    kick-confirm-title: "&4{player} verwijderen?"
+    kicked: "&e{player} &7is van het eiland verwijderd."
+    you-were-kicked: "&cJe bent door &e{player} &cvan het eiland verwijderd."
+
+  upgrades:
+    title: "&8Eilandupgrades"
+    name: "&6{upgrade} &7(niveau {level})"
+    level-lore:
+      - "&7Niveau: &f{level}&7/&f{max}"
+    current-header: "&7Huidig:"
+    next-header: "&7Volgend niveau (&f{level}&7):"
+    value-size: " &8- &fStraal {radius} blokken &7({size}x{size})"
+    value-members: " &8- &fMaximaal {limit} leden"
+    value-generator: " &8- &f{block}: &e{percent}%"
+    cost: "&7Kosten: &6{cost}"
+    maxed:
+      - "&a&lMaximaal niveau bereikt!"
+    click:
+      - "&eKlik om te upgraden"
+    too-expensive:
+      - "&cJe hebt niet genoeg geld"
+    owner-only:
+      - "&cAlleen de eigenaar kan upgraden"
+    success: "&a{upgrade} &ais geupgraded naar niveau &e{level} &avoor &6{cost}&a."
+    already-max: "&c{upgrade} &cis al op het maximale niveau."
+
+  warps:
+    title: "&8Eilandwarps"
+    island-name: "&e{name}"
+    island-lore:
+      - "&7Eigenaar: &f{owner}"
+      - "&7Level: &f{level}"
+      - "&7Leden: &f{members}"
+      - ""
+      - "&eKlik om te bezoeken"
+    island-lore-banned:
+      - "&7Eigenaar: &f{owner}"
+      - "&7Level: &f{level}"
+      - "&7Leden: &f{members}"
+      - ""
+      - "&cJe bent verbannen van dit eiland"
+    empty-name: "&7Geen warps"
+    empty-lore:
+      - "&7Er zijn nog geen openbare"
+      - "&7eilandwarps."
+    info-name: "&ePagina {page} van {pages}"
+    info-lore:
+      - "&7Openbare warps: &f{count}"
+    banned: "&cJe bent verbannen van dit eiland."
+    unavailable: "&cDeze warp is niet meer beschikbaar."
+
+  challenges:
+    title: "&8Challenges"
+    none-name: "&cGeen challenges"
+    none-lore:
+      - "&7Er zijn geen challenges ingesteld."
+    tab-name: "{category}"
+    tab-name-locked: "{category} &8(vergrendeld)"
+    tab-lore:
+      - ""
+      - "&7Voltooid: &f{done}&7/&f{total}"
+      - ""
+      - "&eKlik om te bekijken"
+    tab-lore-locked:
+      - ""
+      - "&cVereist eilandlevel {level}"
+      - ""
+      - "&eKlik om te bekijken"
+    tab-selected:
+      - "&a> Geselecteerd"
+    name-available: "{challenge}"
+    name-completed: "{challenge} &a(voltooid)"
+    name-locked: "{challenge} &8(vergrendeld)"
+    description-line: "&7{line}"
+    requirements-header: "&eVereisten:"
+    requirement-item: " &8- &f{amount}x {item}"
+    requirement-block: " &8- &f{amount}x {item} &7(geplaatst)"
+    requirement-level: " &8- &fEilandlevel {level}"
+    items-taken: "&8De items worden ingeleverd."
+    items-kept: "&8De items blijven in je inventory."
+    blocks-radius: "&8Binnen {radius} blokken van jou, op je eigen eiland."
+    reward-header: "&aBeloning:"
+    repeat-reward-header: "&aBeloning bij herhalen:"
+    repeatable-note: "&8Herhaalbaar met een kleinere beloning."
+    status-locked:
+      - "&cVergrendeld: eilandlevel {level} nodig"
+    status-available:
+      - "&eKlik om te voltooien"
+    status-repeatable:
+      - "&7Voltooid: &f{count}&7/&f{max}"
+      - "&eKlik om opnieuw te voltooien"
+    status-completed:
+      - "&aVoltooid ({count}x)"
+
+  shop:
+    title: "&8Shop"
+    category-name: "{category}"
+    category-lore:
+      - ""
+      - "&7Artikelen: &f{count}"
+      - ""
+      - "&eKlik om te openen"
+    category-title: "&8Shop: {category}"
+    empty-name: "&cLeeg"
+    empty-lore:
+      - "&7Hier is nog niets te koop."
+    sell-all-name: "&6Alles verkopen"
+    sell-all-lore:
+      - "&7Verkoop alle verkoopbare items"
+      - "&7uit je inventory in een keer."
+      - "&7Items met een eigen naam of"
+      - "&7betovering worden overgeslagen."
+      - ""
+      - "&eKlik om alles te verkopen"
+    help-name: "&eZo werkt de shop"
+    help-lore:
+      - "&eLinksklik: &7koop 1 eenheid"
+      - "&eShift-linksklik: &7koop {bulk} eenheden"
+      - "&eRechtsklik: &7verkoop 1 eenheid"
+      - "&eShift-rechtsklik: &7verkoop alles van dat item"
+    back-name: "&eTerug"
+    back-lore:
+      - "&7Terug naar de categorieen."
+    item-name: "&f{item}"
+    item-unit: "&7Per eenheid: &f{amount} stuks"
+    item-buy: "&7Kopen: &c{price} &8({bulk}x: {bulk-price})"
+    item-no-buy: "&8Niet te koop"
+    item-sell: "&7Verkopen: &a{price}"
+    item-no-sell: "&8Niet te verkopen"
+    item-have: "&7In je inventory: &f{amount} &8(waarde {price})"
+    item-hint-buy:
+      - "&eLinksklik: &7koop 1, &eShift: &7koop {bulk}"
+    item-hint-sell:
+      - "&eRechtsklik: &7verkoop 1, &eShift: &7verkoop alles"

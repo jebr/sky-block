@@ -1,0 +1,23 @@
+# Berichten van de challenges. Kleurcodes met &, placeholders tussen {}.
+challenges:
+  unknown: "&cOnbekende challenge: &e{id}&c."
+  category-locked: "&cDe categorie {category} &cwordt ontgrendeld op eilandlevel &e{level}&c."
+  already-completed: "&cJe hebt {challenge} &cal voltooid."
+  max-completions: "&cJe hebt {challenge} &cal het maximale aantal keer voltooid."
+  missing-items: "&cJe mist nog: &e{items}&c."
+  missing-blocks: "&cBinnen {radius} blokken van jou mist nog: &e{items}&c."
+  level-too-low: "&cJe eiland moet level &e{level} &czijn (nu &e{current}&c)."
+  not-on-island: "&cJe moet op je eigen eiland staan voor deze challenge."
+  completed: "&aChallenge {challenge} &avoltooid! Beloning: &e{reward}"
+  repeated: "&aChallenge {challenge} &aopnieuw voltooid (&e{count}x&a)! Beloning: &e{reward}"
+  broadcast: "&e{player} &7heeft de challenge {challenge} &7voltooid!"
+  item-format: "{amount}x {item}"
+  item-separator: ", "
+  xp-format: "{xp} XP"
+  no-reward: "geen"
+  lore:
+    reward-money: " &8- &6{amount}"
+    reward-item: " &8- &f{amount}x {item}"
+    reward-xp: " &8- &b{xp} XP"
+    reward-extra: " &8- &dEen extra verrassing"
+    reward-none: " &8- &7Geen"

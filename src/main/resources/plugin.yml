@@ -1,0 +1,37 @@
+name: SkyBlock
+version: '${project.version}'
+main: nl.jebr.skyblock.SkyBlockPlugin
+api-version: '1.21'
+author: jebr
+description: Volledige SkyBlock-spelmodus met eilanden, teams, challenges, economie, shop en upgrades.
+
+commands:
+  island:
+    description: SkyBlock eilandcommando's
+    usage: /<command> help
+    aliases: [is, skyblock, sb]
+    permission: skyblock.use
+  isadmin:
+    description: SkyBlock beheercommando's
+    usage: /<command> help
+    aliases: [sbadmin, skyblockadmin]
+    permission: skyblock.admin
+  balance:
+    description: Bekijk je saldo
+    aliases: [bal, money]
+    permission: skyblock.use
+  pay:
+    description: Betaal een andere speler
+    usage: /<command> <speler> <bedrag>
+    permission: skyblock.use
+
+permissions:
+  skyblock.use:
+    description: Basis toegang tot SkyBlock
+    default: true
+  skyblock.admin:
+    description: Toegang tot beheercommando's
+    default: op
+  skyblock.bypass:
+    description: Negeert eilandbescherming
+    default: op

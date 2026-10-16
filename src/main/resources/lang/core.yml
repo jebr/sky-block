@@ -1,0 +1,14 @@
+# Algemene berichten. Kleurcodes met &, placeholders tussen {}.
+prefix: "&8[&b&lSkyBlock&8] &7"
+
+general:
+  no-permission: "&cDaar heb je geen toestemming voor."
+  player-only: "&cDit commando kan alleen door een speler worden gebruikt."
+  player-not-found: "&cSpeler &e{player} &cis niet gevonden."
+  no-island: "&cJe hebt nog geen eiland. Maak er een met &e/is create&c."
+  already-has-island: "&cJe hebt al een eiland."
+  not-enough-money: "&cJe hebt niet genoeg geld. Nodig: &e{amount}&c."
+  invalid-number: "&e{input} &cis geen geldig getal."
+  reloaded: "&aConfiguratie herladen."
+  teleporting: "&7Je wordt geteleporteerd..."
+  role-too-low: "&cAlleen een &e{role} &cof hoger kan dit doen."

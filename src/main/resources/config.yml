@@ -1,0 +1,86 @@
+# ============================================================
+#  SkyBlock configuratie
+# ============================================================
+
+world:
+  # Naam van de void-wereld waarin alle eilanden staan
+  name: skyblock_world
+  # Hoogte waarop eilanden worden gebouwd
+  island-height: 100
+  # Afstand (in blokken) tussen de middelpunten van eilanden.
+  # Moet groter zijn dan 2x de grootste eilandstraal uit de upgrades.
+  island-spacing: 400
+
+island:
+  # Tijd (seconden) dat een uitnodiging geldig blijft
+  invite-timeout: 120
+  # Wachttijd (seconden) tussen twee eiland-resets
+  reset-cooldown: 600
+  # Maximum aantal resets per speler (-1 = onbeperkt)
+  max-resets: -1
+  # Geld wissen bij een reset
+  reset-clears-balance: false
+  # Inventory wissen bij een reset en bij lid worden van een ander eiland
+  reset-clears-inventory: true
+  # Spelers die in de void vallen terug naar hun eiland sturen
+  void-teleport: true
+  # Spelers na de dood op hun eiland laten respawnen
+  respawn-on-island: true
+  # Wereldrand tonen rond het eiland
+  show-border: true
+  # Inhoud van de startkist (MATERIAAL: aantal)
+  starter-chest:
+    ICE: 2
+    LAVA_BUCKET: 1
+    BONE_MEAL: 6
+    MELON_SEEDS: 1
+    PUMPKIN_SEEDS: 1
+    SUGAR_CANE: 1
+    RED_MUSHROOM: 1
+    BROWN_MUSHROOM: 1
+    CACTUS: 1
+    BREAD: 8
+    OAK_SAPLING: 2
+
+economy:
+  # Startbedrag voor nieuwe spelers
+  starting-balance: 100.0
+  # Valutasymbool
+  currency-symbol: "$"
+
+# Automatisch opslaan (minuten)
+autosave-interval: 5
+
+# ============================================================
+#  Upgrades
+#  Per niveau: kosten en de waarde die het niveau oplevert.
+#  Niveau 1 is altijd het startniveau (kosten worden genegeerd).
+# ============================================================
+upgrades:
+  size:
+    1: { cost: 0, radius: 25 }
+    2: { cost: 2500, radius: 40 }
+    3: { cost: 7500, radius: 60 }
+    4: { cost: 20000, radius: 80 }
+    5: { cost: 50000, radius: 100 }
+  members:
+    1: { cost: 0, limit: 2 }
+    2: { cost: 3000, limit: 4 }
+    3: { cost: 10000, limit: 6 }
+    4: { cost: 25000, limit: 8 }
+  generator:
+    1:
+      cost: 0
+      blocks: { COBBLESTONE: 100 }
+    2:
+      cost: 2000
+      blocks: { COBBLESTONE: 85, COAL_ORE: 10, IRON_ORE: 5 }
+    3:
+      cost: 6000
+      blocks: { COBBLESTONE: 75, COAL_ORE: 10, IRON_ORE: 8, COPPER_ORE: 4, GOLD_ORE: 3 }
+    4:
+      cost: 15000
+      blocks: { COBBLESTONE: 65, COAL_ORE: 10, IRON_ORE: 9, COPPER_ORE: 5, GOLD_ORE: 5, REDSTONE_ORE: 3, LAPIS_ORE: 2, DIAMOND_ORE: 1 }
+    5:
+      cost: 40000
+      blocks: { COBBLESTONE: 55, COAL_ORE: 10, IRON_ORE: 10, COPPER_ORE: 5, GOLD_ORE: 7, REDSTONE_ORE: 4, LAPIS_ORE: 3, DIAMOND_ORE: 3, EMERALD_ORE: 2, ANCIENT_DEBRIS: 1 }

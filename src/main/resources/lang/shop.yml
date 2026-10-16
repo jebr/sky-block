@@ -1,0 +1,12 @@
+# Berichten van de shop. Kleurcodes met &, placeholders tussen {}.
+shop:
+  bought: "&aJe hebt &e{amount}x {item} &agekocht voor &6{price}&a."
+  sold: "&aJe hebt &e{amount}x {item} &averkocht voor &6{price}&a."
+  sold-all: "&aJe hebt &e{amount} &aitems (&e{types} &asoorten) verkocht voor &6{price}&a."
+  not-buyable: "&c{item} is niet te koop."
+  not-sellable: "&c{item} kan niet worden verkocht."
+  not-enough-items: "&cJe hebt niet genoeg {item} &c(nodig: &e{amount}&c)."
+  inventory-full: "&cEr is niet genoeg ruimte in je inventory."
+  nothing-to-sell: "&cJe hebt niets dat verkocht kan worden."
+  hand-empty: "&cJe hebt niets in je hand."
+  hand-not-sellable: "&cDit item kan niet worden verkocht."

@@ -1,0 +1,459 @@
+# ============================================================
+#  SkyBlock challenges
+#
+#  categories:
+#    <id>:
+#      name:           weergavenaam (& kleurcodes)
+#      icon:           materiaal voor het tabblad
+#      required-level: eilandlevel dat nodig is om de categorie te ontgrendelen
+#      description:    (optioneel) extra regels in de lore
+#
+#  challenges:
+#    <id>:
+#      category:    id van een categorie hierboven
+#      name:        weergavenaam
+#      icon:        materiaal van het icoon
+#      description: lijst met regels
+#      type:        INVENTORY | ISLAND_LEVEL | ISLAND_BLOCKS
+#      required:    MATERIAAL: aantal   (INVENTORY: items, ISLAND_BLOCKS: blokken)
+#      take:        true/false (INVENTORY: items inleveren, standaard true)
+#      level:       vereist eilandlevel (ISLAND_LEVEL)
+#      radius:      zoekstraal rond de speler (ISLAND_BLOCKS, standaard 10)
+#      reward:      money, xp, items (MATERIAAL: aantal), commands (lijst, {player})
+#      repeatable:  true/false
+#      repeat-reward: (optioneel) beloning bij herhalen, zelfde opbouw als reward
+#      max-completions: (optioneel) maximaal aantal keer, 0 = onbeperkt
+# ============================================================
+
+categories:
+  beginner:
+    name: "&aBeginner"
+    icon: OAK_SAPLING
+    required-level: 0
+    description:
+      - "&7De eerste stappen op je eiland."
+  gemiddeld:
+    name: "&eGemiddeld"
+    icon: IRON_INGOT
+    required-level: 5
+    description:
+      - "&7Je eiland begint te groeien."
+  gevorderd:
+    name: "&6Gevorderd"
+    icon: GOLD_INGOT
+    required-level: 20
+    description:
+      - "&7Voor ervaren eilandbewoners."
+  expert:
+    name: "&cExpert"
+    icon: DIAMOND
+    required-level: 50
+    description:
+      - "&7Alleen de besten halen deze."
+
+challenges:
+
+  # ---------------------------------------------------------- Beginner
+  steenhouwer:
+    category: beginner
+    name: "&fSteenhouwer"
+    icon: COBBLESTONE
+    description:
+      - "Bouw een cobblestone-generator"
+      - "en verzamel een stack cobblestone."
+    type: INVENTORY
+    required: { COBBLESTONE: 64 }
+    take: true
+    reward: { money: 100, xp: 20, items: { IRON_PICKAXE: 1 } }
+    repeatable: true
+    repeat-reward: { money: 20 }
+
+  eerste_boom:
+    category: beginner
+    name: "&2Eerste boom"
+    icon: OAK_LOG
+    description:
+      - "Plant je boompje en hak hem om."
+    type: INVENTORY
+    required: { OAK_LOG: 16 }
+    take: true
+    reward: { money: 75, items: { OAK_SAPLING: 2, APPLE: 2 } }
+    repeatable: true
+    repeat-reward: { money: 15 }
+
+  bakker:
+    category: beginner
+    name: "&6Broodbakker"
+    icon: BREAD
+    description:
+      - "Verbouw tarwe en bak er brood van."
+    type: INVENTORY
+    required: { BREAD: 16 }
+    take: true
+    reward: { money: 100, items: { COW_SPAWN_EGG: 1 } }
+    repeatable: true
+    repeat-reward: { money: 25 }
+
+  suikerriet:
+    category: beginner
+    name: "&aSuikerrietkweker"
+    icon: SUGAR_CANE
+    description:
+      - "Laat suikerriet groeien naast water."
+    type: INVENTORY
+    required: { SUGAR_CANE: 32 }
+    take: true
+    reward: { money: 80, items: { SAND: 8 } }
+    repeatable: true
+    repeat-reward: { money: 20 }
+
+  cactusboer:
+    category: beginner
+    name: "&2Cactusboer"
+    icon: CACTUS
+    description:
+      - "Kweek cactussen op zand."
+    type: INVENTORY
+    required: { CACTUS: 32 }
+    take: true
+    reward: { money: 80, items: { SAND: 16 } }
+    repeatable: true
+    repeat-reward: { money: 20 }
+
+  meloen:
+    category: beginner
+    name: "&aMeloenseizoen"
+    icon: MELON
+    description:
+      - "Oogst een flinke berg meloenschijfjes."
+    type: INVENTORY
+    required: { MELON_SLICE: 64 }
+    take: true
+    reward: { money: 100, items: { DIRT: 8 } }
+    repeatable: true
+    repeat-reward: { money: 25 }
+
+  pompoen:
+    category: beginner
+    name: "&6Pompoenpracht"
+    icon: PUMPKIN
+    description:
+      - "Verbouw pompoenen op je eiland."
+    type: INVENTORY
+    required: { PUMPKIN: 16 }
+    take: true
+    reward: { money: 100, items: { CARROT: 4 } }
+    repeatable: true
+    repeat-reward: { money: 25 }
+
+  botten:
+    category: beginner
+    name: "&fBottenverzamelaar"
+    icon: BONE
+    description:
+      - "Versla skeletten en verzamel botten."
+    type: INVENTORY
+    required: { BONE: 16 }
+    take: true
+    reward: { money: 75, items: { BONE_MEAL: 16 } }
+    repeatable: true
+    repeat-reward: { money: 20 }
+
+  zombievlees:
+    category: beginner
+    name: "&2Zombiejager"
+    icon: ROTTEN_FLESH
+    description:
+      - "Verzamel rotten flesh van zombies."
+    type: INVENTORY
+    required: { ROTTEN_FLESH: 32 }
+    take: true
+    reward: { money: 75, items: { CLAY_BALL: 16 } }
+    repeatable: true
+    repeat-reward: { money: 15 }
+
+  stenen_vloer:
+    category: beginner
+    name: "&7Stevige basis"
+    icon: COBBLESTONE
+    description:
+      - "Breid je eiland uit met cobblestone."
+      - "De blokken moeten rond je staan."
+    type: ISLAND_BLOCKS
+    required: { COBBLESTONE: 100 }
+    radius: 10
+    reward: { money: 150, items: { GRASS_BLOCK: 4 } }
+
+  # ---------------------------------------------------------- Gemiddeld
+  eilandlevel_10:
+    category: gemiddeld
+    name: "&eGroeiend eiland"
+    icon: EXPERIENCE_BOTTLE
+    description:
+      - "Bereik eilandlevel 10."
+    type: ISLAND_LEVEL
+    level: 10
+    reward: { money: 500, xp: 100 }
+
+  ijzersmid:
+    category: gemiddeld
+    name: "&fIJzersmid"
+    icon: IRON_INGOT
+    description:
+      - "Smelt ijzererts uit je generator."
+    type: INVENTORY
+    required: { IRON_INGOT: 32 }
+    take: true
+    reward: { money: 300, items: { BUCKET: 1, SHEARS: 1 } }
+    repeatable: true
+    repeat-reward: { money: 100 }
+
+  draden:
+    category: gemiddeld
+    name: "&fSpinnenrag"
+    icon: STRING
+    description:
+      - "Verzamel draad van spinnen."
+    type: INVENTORY
+    required: { STRING: 32 }
+    take: true
+    reward: { money: 200, items: { SHEEP_SPAWN_EGG: 1 } }
+    repeatable: true
+    repeat-reward: { money: 50 }
+
+  eieren:
+    category: gemiddeld
+    name: "&eKippenboer"
+    icon: EGG
+    description:
+      - "Raap eieren van je kippen."
+    type: INVENTORY
+    required: { EGG: 32 }
+    take: true
+    reward: { money: 200, items: { COCOA_BEANS: 4 } }
+    repeatable: true
+    repeat-reward: { money: 50 }
+
+  wol:
+    category: gemiddeld
+    name: "&fSchapenscheerder"
+    icon: WHITE_WOOL
+    description:
+      - "Scheer schapen voor hun wol."
+    type: INVENTORY
+    required: { WHITE_WOOL: 32 }
+    take: true
+    reward: { money: 250, items: { LEAD: 2, NAME_TAG: 1 } }
+    repeatable: true
+    repeat-reward: { money: 60 }
+
+  glasblazer:
+    category: gemiddeld
+    name: "&bGlasblazer"
+    icon: GLASS
+    description:
+      - "Smelt zand tot glas."
+    type: INVENTORY
+    required: { GLASS: 64 }
+    take: true
+    reward: { money: 250, items: { SAND: 32 } }
+    repeatable: true
+    repeat-reward: { money: 60 }
+
+  bakstenen:
+    category: gemiddeld
+    name: "&cMetselaar"
+    icon: BRICKS
+    description:
+      - "Bak klei tot stenen en maak er"
+      - "bakstenen blokken van."
+    type: INVENTORY
+    required: { BRICKS: 32 }
+    take: true
+    reward: { money: 350, items: { FLOWER_POT: 4 } }
+    repeatable: true
+    repeat-reward: { money: 80 }
+
+  kruit:
+    category: gemiddeld
+    name: "&8Kruitdamp"
+    icon: GUNPOWDER
+    description:
+      - "Versla creepers voor buskruit."
+    type: INVENTORY
+    required: { GUNPOWDER: 16 }
+    take: true
+    reward: { money: 300, items: { TNT: 2 } }
+    repeatable: true
+    repeat-reward: { money: 70 }
+
+  boerderij:
+    category: gemiddeld
+    name: "&aBoerenbedrijf"
+    icon: FARMLAND
+    description:
+      - "Leg een flinke akker aan."
+    type: ISLAND_BLOCKS
+    required: { FARMLAND: 32, WATER: 4 }
+    radius: 10
+    reward: { money: 400, items: { MELON_SEEDS: 4, PUMPKIN_SEEDS: 4 } }
+
+  # ---------------------------------------------------------- Gevorderd
+  eilandlevel_25:
+    category: gevorderd
+    name: "&6Bloeiend eiland"
+    icon: EXPERIENCE_BOTTLE
+    description:
+      - "Bereik eilandlevel 25."
+    type: ISLAND_LEVEL
+    level: 25
+    reward: { money: 1500, xp: 250 }
+
+  lapis:
+    category: gevorderd
+    name: "&9Lapisjager"
+    icon: LAPIS_LAZULI
+    description:
+      - "Verzamel lapis lazuli."
+    type: INVENTORY
+    required: { LAPIS_LAZULI: 64 }
+    take: true
+    reward: { money: 800, items: { ENCHANTING_TABLE: 1 } }
+    repeatable: true
+    repeat-reward: { money: 200 }
+
+  redstone:
+    category: gevorderd
+    name: "&cRedstone-ingenieur"
+    icon: REDSTONE
+    description:
+      - "Verzamel redstone voor je machines."
+    type: INVENTORY
+    required: { REDSTONE: 64 }
+    take: true
+    reward: { money: 800, items: { PISTON: 4, OBSERVER: 2 } }
+    repeatable: true
+    repeat-reward: { money: 200 }
+
+  goudsmid:
+    category: gevorderd
+    name: "&6Goudsmid"
+    icon: GOLD_INGOT
+    description:
+      - "Smelt goud uit je generator."
+    type: INVENTORY
+    required: { GOLD_INGOT: 32 }
+    take: true
+    reward: { money: 900, items: { GOLDEN_APPLE: 2 } }
+    repeatable: true
+    repeat-reward: { money: 220 }
+
+  enderparels:
+    category: gevorderd
+    name: "&5Parelvisser"
+    icon: ENDER_PEARL
+    description:
+      - "Versla endermen voor hun parels."
+    type: INVENTORY
+    required: { ENDER_PEARL: 8 }
+    take: true
+    reward: { money: 1000, items: { BLAZE_ROD: 4 } }
+    repeatable: true
+    repeat-reward: { money: 200, items: { BLAZE_ROD: 1 } }
+
+  tuin:
+    category: gevorderd
+    name: "&dBloementuin"
+    icon: POPPY
+    description:
+      - "Maak een tuin met bloemen en bomen."
+    type: ISLAND_BLOCKS
+    required: { GRASS_BLOCK: 40, POPPY: 4, DANDELION: 4, OAK_LEAVES: 30 }
+    radius: 10
+    reward: { money: 1200, items: { JUNGLE_SAPLING: 2, CHERRY_SAPLING: 2 } }
+
+  # ---------------------------------------------------------- Expert
+  eilandlevel_50:
+    category: expert
+    name: "&cMachtig eiland"
+    icon: EXPERIENCE_BOTTLE
+    description:
+      - "Bereik eilandlevel 50."
+    type: ISLAND_LEVEL
+    level: 50
+    reward: { money: 5000, xp: 500 }
+
+  eilandlevel_100:
+    category: expert
+    name: "&4Legendarisch eiland"
+    icon: NETHER_STAR
+    description:
+      - "Bereik eilandlevel 100."
+    type: ISLAND_LEVEL
+    level: 100
+    reward: { money: 15000, xp: 1000, items: { NETHER_STAR: 1 } }
+
+  diamanten:
+    category: expert
+    name: "&bDiamantair"
+    icon: DIAMOND
+    description:
+      - "Verzamel diamanten uit je generator."
+    type: INVENTORY
+    required: { DIAMOND: 16 }
+    take: true
+    reward: { money: 2500, items: { DIAMOND_PICKAXE: 1 } }
+    repeatable: true
+    repeat-reward: { money: 500 }
+    max-completions: 10
+
+  smaragden:
+    category: expert
+    name: "&aSmaragdhandelaar"
+    icon: EMERALD
+    description:
+      - "Verzamel smaragden."
+    type: INVENTORY
+    required: { EMERALD: 16 }
+    take: true
+    reward: { money: 3000, items: { VILLAGER_SPAWN_EGG: 1 } }
+    repeatable: true
+    repeat-reward: { money: 600 }
+    max-completions: 10
+
+  slijm:
+    category: expert
+    name: "&aSlijmerig"
+    icon: SLIME_BALL
+    description:
+      - "Verzamel slijmballen."
+    type: INVENTORY
+    required: { SLIME_BALL: 32 }
+    take: true
+    reward: { money: 2000, items: { STICKY_PISTON: 4 } }
+    repeatable: true
+    repeat-reward: { money: 400 }
+
+  schatkamer:
+    category: expert
+    name: "&6Schatkamer"
+    icon: GOLD_BLOCK
+    description:
+      - "Laat zien wat je hebt: houd deze blokken"
+      - "in je inventory (ze worden niet ingenomen)."
+    type: INVENTORY
+    required: { IRON_BLOCK: 16, GOLD_BLOCK: 8, DIAMOND_BLOCK: 2 }
+    take: false
+    reward: { money: 3000, items: { BEACON: 1 } }
+
+  bibliotheek:
+    category: expert
+    name: "&eBibliotheek"
+    icon: BOOKSHELF
+    description:
+      - "Bouw een bibliotheek met een"
+      - "betoveringstafel op je eiland."
+    type: ISLAND_BLOCKS
+    required: { BOOKSHELF: 15, ENCHANTING_TABLE: 1 }
+    radius: 10
+    reward: { money: 4000, xp: 1000 }

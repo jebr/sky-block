@@ -1,0 +1,258 @@
+# Berichten van /island, /isadmin, /balance en /pay. Kleurcodes met &, placeholders tussen {}.
+# Algemene berichten (general.*) staan in core.yml.
+commands:
+  unknown-subcommand: "&cOnbekend subcommando. Gebruik &e/{label} help&c."
+  player-offline: "&e{player} &cis niet online."
+  no-island-other: "&e{player} &cheeft geen eiland."
+  not-member: "&e{player} &cis geen lid van je eiland."
+  not-on-island: "&cDit kan alleen terwijl je op je eigen eiland staat."
+  island-full: "&cHet eiland zit vol (maximaal &e{limit} &cleden). Upgrade het ledenaantal via &e/is upgrades&c."
+  time-format: "{minutes}m {seconds}s"
+
+  help:
+    island:
+      - "&8&m                                                  "
+      - "&b&lSkyBlock &7- eilandcommando's"
+      - "&e/{label} &7- Open het hoofdmenu"
+      - "&e/{label} create &7- Maak een nieuw eiland"
+      - "&e/{label} home &7- Ga naar je eiland"
+      - "&e/{label} sethome &7- Zet de home van je eiland op je huidige plek"
+      - "&e/{label} reset &7- Begin opnieuw met een nieuw eiland"
+      - "&e/{label} info [speler] &7- Bekijk informatie over een eiland"
+      - "&e/{label} level &7- Bereken het level van je eiland"
+      - "&e/{label} top &7- Bekijk de beste eilanden"
+      - "&e/{label} invite <speler> &7- Nodig een speler uit"
+      - "&e/{label} accept &7/ &edeny &7- Accepteer of weiger een uitnodiging"
+      - "&e/{label} kick <speler> &7- Verwijder een lid van je eiland"
+      - "&e/{label} leave &7- Verlaat het eiland waar je lid van bent"
+      - "&e/{label} transfer <speler> &7- Draag je eiland over aan een lid"
+      - "&e/{label} promote &7/ &edemote <speler> &7- Wijzig de rol van een lid"
+      - "&e/{label} members &7- Bekijk de leden van je eiland"
+      - "&e/{label} settings &7- Stel in wat bezoekers mogen"
+      - "&e/{label} upgrades &7- Upgrade je eiland"
+      - "&e/{label} lock &7/ &eunlock &7- Sluit je eiland af voor bezoekers"
+      - "&e/{label} ban &7/ &eunban <speler> &7- Weer een speler van je eiland"
+      - "&e/{label} visit <speler> &7- Bezoek het eiland van een speler"
+      - "&e/{label} setwarp &7/ &edelwarp &7- Zet of verwijder de warp van je eiland"
+      - "&e/{label} warp <speler> &7- Ga naar de warp van een eiland"
+      - "&e/{label} warps &7- Bekijk alle eilandwarps"
+      - "&e/{label} challenges &7- Bekijk de challenges"
+      - "&e/{label} challenge <id> &7- Voltooi een challenge"
+      - "&e/{label} shop &7- Open de shop"
+      - "&e/{label} sell [hand|all] &7- Verkoop wat je in je hand of inventory hebt"
+      - "&e/{label} name <naam> &7- Geef je eiland een naam"
+      - "&e/{label} chat <bericht> &7- Stuur een bericht naar je eilandleden"
+      - "&8&m                                                  "
+    admin:
+      - "&8&m                                                  "
+      - "&c&lSkyBlock &7- beheercommando's"
+      - "&e/{label} reload &7- Herlaad de configuratie"
+      - "&e/{label} save &7- Sla alle gegevens nu op"
+      - "&e/{label} delete <speler> &7- Verwijder het eiland van een speler"
+      - "&e/{label} tp <speler> &7- Ga naar het eiland van een speler"
+      - "&e/{label} info <speler> &7- Bekijk speler- en eilandgegevens"
+      - "&e/{label} setlevel <speler> <size|members|generator> <niveau> &7- Zet een upgradeniveau"
+      - "&e/{label} addmember <eigenaar> <speler> &7- Voeg een speler toe aan een eiland"
+      - "&e/{label} removemember <speler> &7- Haal een speler van zijn eiland"
+      - "&e/{label} setowner <speler> &7- Maak een lid eigenaar van zijn eiland"
+      - "&e/{label} money <give|take|set> <speler> <bedrag> &7- Beheer saldo"
+      - "&e/{label} resetchallenges <speler> &7- Wis de voortgang van challenges"
+      - "&e/{label} resetcount <speler> &7- Zet het aantal resets en de wachttijd op nul"
+      - "&e/{label} recalc <speler> &7- Bereken het eilandlevel opnieuw"
+      - "&8&m                                                  "
+
+  usage:
+    invite: "&cGebruik: &e/{label} invite <speler>"
+    kick: "&cGebruik: &e/{label} kick <speler>"
+    transfer: "&cGebruik: &e/{label} transfer <speler>"
+    promote: "&cGebruik: &e/{label} promote <speler>"
+    demote: "&cGebruik: &e/{label} demote <speler>"
+    ban: "&cGebruik: &e/{label} ban <speler>"
+    unban: "&cGebruik: &e/{label} unban <speler>"
+    visit: "&cGebruik: &e/{label} visit <speler>"
+    warp: "&cGebruik: &e/{label} warp <speler>"
+    challenge: "&cGebruik: &e/{label} challenge <id>"
+    sell: "&cGebruik: &e/{label} sell [hand|all]"
+    name: "&cGebruik: &e/{label} name <naam>"
+    chat: "&cGebruik: &e/{label} chat <bericht>"
+
+  create:
+    creating: "&7Je eiland wordt gemaakt..."
+    success: "&aJe eiland staat klaar. Veel plezier!"
+
+  sethome:
+    success: "&aDe home van je eiland is verplaatst naar deze plek."
+
+  reset:
+    warning: "&cLet op: bij een reset verdwijnt je hele eiland en verliezen alle leden hun plek."
+    warning-limited: "&cLet op: bij een reset verdwijnt je hele eiland. Je hebt nog &e{left} &creset(s) over."
+    confirm-title: "&cEiland resetten?"
+    cooldown: "&cJe moet nog &e{time} &cwachten voordat je opnieuw kunt resetten."
+    max-resets: "&cJe hebt het maximum van &e{max} &cresets bereikt."
+    success: "&aJe eiland is gereset. Je krijgt een nieuw starteiland."
+    member-notify: "&e{player} &cheeft het eiland gereset. Je bent geen lid meer."
+
+  info:
+    lines:
+      - "&8&m                                                  "
+      - "&b&lEiland &f{name}"
+      - "&7Eigenaar: &f{owner}"
+      - "&7Leden (&f{member_count}&7/&f{member_limit}&7): {members}"
+      - "&7Level: &a{level} &8(&7{points} punten&8)"
+      - "&7Straal: &f{radius} &7blokken"
+      - "&7Upgrades: &fgrootte {size}/{size_max}&7, &fleden {members_level}/{members_max}&7, &fgenerator {generator}/{generator_max}"
+      - "&7Afgesloten: {locked}"
+      - "&7Warp: {warp}"
+      - "&8&m                                                  "
+    member-entry: "&f{player} &8({role})"
+    member-separator: "&7, "
+    "yes": "&cja"
+    "no": "&anee"
+    warp-none: "&7niet ingesteld"
+    warp-on: "&aingeschakeld"
+    warp-off: "&cuitgeschakeld"
+
+  level:
+    busy: "&cHet level van dit eiland wordt al berekend. Even geduld."
+    calculating: "&7Het eilandlevel wordt berekend..."
+    result: "&aJe eiland is level &e{level} &a(&e{points} &apunten)."
+
+  invite:
+    self: "&cJe kunt jezelf niet uitnodigen."
+    already-member: "&e{player} &cis al lid van je eiland."
+    has-island: "&e{player} &cheeft al een eiland."
+    sent: "&aJe hebt &e{player} &auitgenodigd. De uitnodiging is &e{seconds} &aseconden geldig."
+    received: "&e{player} &aheeft je uitgenodigd voor het eiland &e{island}&a. Typ &e/is accept &aof &e/is deny &abinnen &e{seconds} &aseconden."
+    none: "&cJe hebt geen geldige uitnodiging."
+    leave-first: "&cJe hebt al een eiland. Verlaat het of reset het voordat je een uitnodiging accepteert."
+    accepted: "&aJe bent nu lid van het eiland &e{island}&a."
+    joined-notify: "&e{player} &ais lid geworden van het eiland."
+    denied: "&7Je hebt de uitnodiging geweigerd."
+    denied-notify: "&e{player} &cheeft je uitnodiging geweigerd."
+
+  kick:
+    self: "&cJe kunt jezelf niet kicken. Gebruik &e/is leave&c."
+    higher-role: "&cJe kunt &e{player} &cniet kicken: die heeft een gelijke of hogere rol."
+    success: "&aJe hebt &e{player} &avan het eiland verwijderd."
+    notify: "&e{player} &7is door &e{kicker} &7van het eiland verwijderd."
+    kicked: "&cJe bent door &e{player} &cvan het eiland verwijderd."
+
+  leave:
+    owner: "&cAls eigenaar kun je niet vertrekken. Draag het eiland over met &e/is transfer &cof gebruik &e/is reset&c."
+    success: "&aJe hebt het eiland verlaten."
+    notify: "&e{player} &7heeft het eiland verlaten."
+
+  transfer:
+    self: "&cJe bent al de eigenaar."
+    confirm-title: "&cOverdragen aan {player}?"
+    failed: "&cDe overdracht is niet meer mogelijk."
+    success: "&aJe hebt het eiland overgedragen aan &e{player}&a. Je bent nu mede-eigenaar."
+    notify: "&e{player} &7is nu de eigenaar van het eiland (was &e{old}&7)."
+
+  promote:
+    owner: "&cDe rol van de eigenaar kun je niet wijzigen."
+    already-highest: "&e{player} &cis al mede-eigenaar."
+    already-lowest: "&e{player} &cis al gewoon lid."
+    success: "&e{player} &ais nu &e{role}&a."
+    notify: "&aJe rol op het eiland is nu &e{role}&a."
+
+  lock:
+    locked: "&aJe eiland is afgesloten. Bezoekers kunnen er niet meer naartoe."
+    unlocked: "&aJe eiland is weer open voor bezoekers."
+    already-locked: "&cJe eiland is al afgesloten."
+    already-unlocked: "&cJe eiland is al open."
+    removed-visitor: "&cDit eiland is afgesloten. Je bent naar de spawn gestuurd."
+
+  ban:
+    self: "&cJe kunt jezelf niet verbannen."
+    member: "&cJe kunt &e{player} &cniet verbannen: die is lid van je eiland."
+    already: "&e{player} &cis al verbannen."
+    success: "&aJe hebt &e{player} &avan je eiland verbannen."
+    banned: "&cJe bent verbannen van het eiland &e{island}&c."
+    not-banned: "&e{player} &cis niet verbannen."
+    unbanned: "&e{player} &amag je eiland weer bezoeken."
+
+  visit:
+    banned: "&cJe bent verbannen van het eiland van &e{player}&c."
+    locked: "&cHet eiland van &e{player} &cis afgesloten."
+    teleporting: "&7Je gaat naar het eiland &e{island}&7..."
+
+  warp:
+    set: "&aDe warp van je eiland staat op deze plek en is ingeschakeld."
+    none: "&cJe eiland heeft geen warp."
+    deleted: "&aDe warp van je eiland is verwijderd."
+    not-available: "&cHet eiland van &e{player} &cheeft geen open warp."
+
+  challenge:
+    unknown: "&cOnbekende challenge: &e{id}&c."
+
+  name:
+    empty: "&cDe naam mag niet leeg zijn."
+    too-long: "&cDe naam mag maximaal &e{max} &ctekens lang zijn (zonder kleurcodes)."
+    success: "&aJe eiland heet nu &f{name}&a."
+
+  chat:
+    format: "&8[&bEiland&8] &7{role} &f{player}&8: &f{message}"
+
+  economy:
+    balance: "&7Je saldo: &a{balance}"
+    balance-other: "&7Saldo van &e{player}&7: &a{balance}"
+    pay-usage: "&cGebruik: &e/{label} <speler> <bedrag>"
+    pay-self: "&cJe kunt jezelf geen geld sturen."
+    invalid-amount: "&e{input} &cis geen geldig bedrag. Gebruik een positief getal met hoogstens 2 decimalen."
+    pay-sent: "&aJe hebt &e{amount} &abetaald aan &e{player}&a."
+    pay-received: "&aJe hebt &e{amount} &aontvangen van &e{player}&a."
+
+  admin:
+    saved: "&aAlle gegevens zijn opgeslagen."
+    usage:
+      delete: "&cGebruik: &e/{label} delete <speler>"
+      tp: "&cGebruik: &e/{label} tp <speler>"
+      info: "&cGebruik: &e/{label} info <speler>"
+      setlevel: "&cGebruik: &e/{label} setlevel <speler> <size|members|generator> <niveau>"
+      addmember: "&cGebruik: &e/{label} addmember <eilandeigenaar> <speler>"
+      removemember: "&cGebruik: &e/{label} removemember <speler>"
+      setowner: "&cGebruik: &e/{label} setowner <speler>"
+      money: "&cGebruik: &e/{label} money <give|take|set> <speler> <bedrag>"
+      resetchallenges: "&cGebruik: &e/{label} resetchallenges <speler>"
+      resetcount: "&cGebruik: &e/{label} resetcount <speler>"
+      recalc: "&cGebruik: &e/{label} recalc <speler>"
+    player-info:
+      - "&8&m                                                  "
+      - "&c&lSpeler &f{player}"
+      - "&7UUID: &f{uuid}"
+      - "&7Saldo: &a{balance}"
+      - "&7Resets: &f{resets}"
+      - "&7Voltooide challenges: &f{challenges}"
+    island-extra:
+      - "&7Eiland-ID: &f{id}"
+      - "&7Middelpunt: &fx {x}, z {z}"
+      - "&7Verbannen spelers: &f{banned}"
+    delete:
+      confirm-title: "&cEiland van {player} verwijderen?"
+      success: "&aHet eiland van &e{player} &ais verwijderd."
+      already-gone: "&cDit eiland bestaat niet meer."
+    setlevel:
+      unknown-upgrade: "&cOnbekende upgrade &e{input}&c. Kies uit size, members of generator."
+      success: "&a{upgrade} van &e{player} &astaat nu op niveau &e{level}&a/&e{max}&a."
+    addmember:
+      already: "&e{player} &cis al lid van dit eiland."
+      has-island: "&e{player} &cheeft al een eiland. Haal die speler daar eerst weg."
+      over-limit: "&eLet op: de ledenlimiet van dit eiland wordt overschreden."
+      success: "&e{player} &ais toegevoegd aan het eiland van &e{owner}&a."
+      notify: "&aEen beheerder heeft je toegevoegd aan het eiland &e{island}&a."
+    removemember:
+      owner: "&e{player} &cis eigenaar. Gebruik &e/isadmin setowner &cof &e/isadmin delete&c."
+      success: "&e{player} &ais van het eiland gehaald."
+      notify: "&cEen beheerder heeft je van je eiland gehaald."
+    setowner:
+      already: "&e{player} &cis al eigenaar."
+      success: "&e{player} &ais nu eigenaar van het eiland."
+    money:
+      success: "&aNieuw saldo van &e{player}&a: &e{balance}"
+    resetchallenges:
+      success: "&aDe challenges van &e{player} &azijn gewist."
+    resetcount:
+      success: "&aHet aantal resets en de wachttijd van &e{player} &astaan weer op nul."
+    recalc:
+      result: "&aHet eiland van &e{player} &ais level &e{level} &a(&e{points} &apunten)."

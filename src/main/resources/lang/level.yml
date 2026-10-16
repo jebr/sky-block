@@ -1,0 +1,48 @@
+# Berichten voor eilandlevels en de ranglijst. Kleurcodes met &, placeholders tussen {}.
+level:
+  # Berichten bij het berekenen (te gebruiken door /is level)
+  calculating: "&7Je eilandlevel wordt berekend, een ogenblik geduld..."
+  already-calculating: "&cEr loopt al een berekening voor dit eiland."
+  result: "&aJe eiland is nu level &e{level} &7(&e{points} &7punten). Nog &e{next} &7punten tot het volgende level."
+  result-other: "&7Het eiland van &e{player} &7is level &e{level} &7(&e{points} &7punten)."
+  world-not-loaded: "&cDe eilandwereld is niet geladen, probeer het later opnieuw."
+  block-value: "&7Waarde van &e{block}&7: &e{value} &7punten per blok."
+  block-value-limit: "&7Waarde van &e{block}&7: &e{value} &7punten per blok (maximaal &e{limit} &7tellen mee)."
+
+  menu:
+    title: "&8Top eilanden"
+    entry-name: "&e#{rank} &f{name}"
+    entry-name-1: "&6&l#1 &6{name}"
+    entry-name-2: "&f&l#2 &f{name}"
+    entry-name-3: "&c&l#3 &c{name}"
+    default-island-name: "Eiland van {owner}"
+    entry-lore:
+      - "&7Eigenaar: &f{owner}"
+      - "&7Level: &a{level}"
+      - "&7Punten: &a{points}"
+      - "&7Leden (&f{member-count}&7): &f{members}"
+      - ""
+    entry-warp:
+      - "&aKlik om dit eiland te bezoeken."
+    entry-no-warp:
+      - "&8Dit eiland heeft geen open warp."
+    no-members: "geen"
+    empty-name: "&8#{rank} &7Nog vrij"
+    empty-lore:
+      - "&7Hier kan jouw eiland staan!"
+    info-name: "&b&lJouw eiland"
+    info-lore:
+      - "&7Plaats: &e#{rank}"
+      - "&7Level: &a{level}"
+      - "&7Punten: &a{points}"
+      - "&7Nog &e{next} &7punten tot het volgende level."
+      - ""
+      - "&8Gebruik /is level om opnieuw te berekenen."
+    info-no-island:
+      - "&7Je hebt nog geen eiland."
+      - "&7Maak er een met &e/is create&7."
+    close-name: "&cSluiten"
+    close-lore:
+      - "&7Sluit dit menu."
+    teleporting: "&7Je wordt naar &e{name} &7geteleporteerd..."
+    warp-unavailable: "&cDit eiland is op dit moment niet te bezoeken."

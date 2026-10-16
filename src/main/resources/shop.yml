@@ -1,0 +1,153 @@
+# ============================================================
+#  SkyBlock shop
+#
+#  Per categorie:
+#    name:        weergavenaam (& kleurcodes)
+#    icon:        materiaal van het icoon
+#    slot:        (optioneel) vakje in het shopmenu (10-34, niet in de rand)
+#    description: (optioneel) extra regels in de lore
+#    items:       lijst van artikelen
+#
+#  Per artikel (de sleutel is een vrije id; zonder 'material' wordt de sleutel
+#  als materiaal gebruikt):
+#    material: materiaalnaam (1.21)
+#    amount:   aantal stuks per eenheid (1-64)
+#    buy:      koopprijs per eenheid  (0 of -1 = niet te koop)
+#    sell:     verkoopprijs per eenheid (0 of -1 = niet te verkopen)
+#
+#  Richtlijn: verkopen levert ongeveer 1/4 tot 1/3 van de koopprijs op.
+#  De upgrades kosten 2.000 tot 50.000, dus een uur actief farmen moet
+#  enkele honderden tot een paar duizend opleveren.
+# ============================================================
+
+categories:
+  blokken:
+    name: "&6Blokken"
+    icon: GRASS_BLOCK
+    slot: 11
+    description:
+      - "&7Bouwmaterialen voor je eiland."
+    items:
+      COBBLESTONE: { amount: 64, buy: 40, sell: 8 }
+      STONE: { amount: 64, buy: 80, sell: 12 }
+      DIRT: { amount: 16, buy: 40, sell: 2 }
+      GRASS_BLOCK: { amount: 8, buy: 80, sell: -1 }
+      SAND: { amount: 16, buy: 48, sell: 6 }
+      GRAVEL: { amount: 16, buy: 40, sell: 5 }
+      CLAY: { amount: 16, buy: 64, sell: 12 }
+      OAK_LOG: { amount: 16, buy: 48, sell: 10 }
+      SPRUCE_LOG: { amount: 16, buy: 48, sell: 10 }
+      BIRCH_LOG: { amount: 16, buy: 48, sell: 10 }
+      GLASS: { amount: 16, buy: 64, sell: 10 }
+      BRICKS: { amount: 16, buy: 120, sell: 24 }
+      STONE_BRICKS: { amount: 16, buy: 64, sell: 8 }
+      SMOOTH_STONE: { amount: 16, buy: 64, sell: 8 }
+      OBSIDIAN: { amount: 1, buy: 150, sell: 20 }
+      ICE: { amount: 1, buy: 50, sell: -1 }
+
+  landbouw:
+    name: "&aLandbouw"
+    icon: WHEAT
+    slot: 13
+    description:
+      - "&7Zaden, gewassen en oogst."
+    items:
+      WHEAT_SEEDS: { amount: 16, buy: 32, sell: 2 }
+      WHEAT: { amount: 16, buy: -1, sell: 12 }
+      CARROT: { amount: 16, buy: 64, sell: 12 }
+      POTATO: { amount: 16, buy: 64, sell: 12 }
+      BEETROOT_SEEDS: { amount: 16, buy: 48, sell: 2 }
+      SUGAR_CANE: { amount: 16, buy: 48, sell: 10 }
+      CACTUS: { amount: 16, buy: 64, sell: 10 }
+      MELON_SLICE: { amount: 64, buy: -1, sell: 16 }
+      MELON: { amount: 1, buy: -1, sell: 2 }
+      PUMPKIN: { amount: 16, buy: -1, sell: 24 }
+      BAMBOO: { amount: 32, buy: 48, sell: 4 }
+      COCOA_BEANS: { amount: 8, buy: 64, sell: 8 }
+      NETHER_WART: { amount: 8, buy: 400, sell: 24 }
+      OAK_SAPLING: { amount: 4, buy: 60, sell: -1 }
+      SPRUCE_SAPLING: { amount: 4, buy: 60, sell: -1 }
+      BIRCH_SAPLING: { amount: 4, buy: 60, sell: -1 }
+      JUNGLE_SAPLING: { amount: 4, buy: 120, sell: -1 }
+      BONE_MEAL: { amount: 16, buy: 40, sell: 4 }
+      APPLE: { amount: 4, buy: 40, sell: 6 }
+
+  mobdrops:
+    name: "&cMob drops"
+    icon: ROTTEN_FLESH
+    slot: 15
+    description:
+      - "&7Buit van monsters en dieren."
+    items:
+      ROTTEN_FLESH: { amount: 16, buy: -1, sell: 6 }
+      BONE: { amount: 16, buy: 64, sell: 12 }
+      STRING: { amount: 16, buy: 80, sell: 14 }
+      SPIDER_EYE: { amount: 8, buy: -1, sell: 10 }
+      GUNPOWDER: { amount: 8, buy: 120, sell: 24 }
+      ARROW: { amount: 16, buy: 48, sell: 4 }
+      ENDER_PEARL: { amount: 1, buy: 120, sell: 15 }
+      SLIME_BALL: { amount: 8, buy: 200, sell: 30 }
+      LEATHER: { amount: 8, buy: 80, sell: 16 }
+      FEATHER: { amount: 16, buy: 48, sell: 8 }
+      EGG: { amount: 16, buy: 48, sell: 8 }
+      WHITE_WOOL: { amount: 16, buy: 96, sell: 16 }
+      BLAZE_ROD: { amount: 1, buy: 250, sell: 20 }
+
+  ertsen:
+    name: "&bErtsen"
+    icon: DIAMOND
+    slot: 22
+    description:
+      - "&7Grondstoffen uit je generator."
+    items:
+      COAL: { amount: 16, buy: 96, sell: 24 }
+      IRON_INGOT: { amount: 8, buy: 160, sell: 40 }
+      COPPER_INGOT: { amount: 16, buy: 96, sell: 24 }
+      GOLD_INGOT: { amount: 8, buy: 240, sell: 64 }
+      REDSTONE: { amount: 16, buy: 96, sell: 24 }
+      LAPIS_LAZULI: { amount: 16, buy: 128, sell: 32 }
+      DIAMOND: { amount: 1, buy: 250, sell: 40 }
+      EMERALD: { amount: 1, buy: 300, sell: 50 }
+      QUARTZ: { amount: 16, buy: 160, sell: 32 }
+      NETHERITE_SCRAP: { amount: 1, buy: -1, sell: 400 }
+
+  diversen:
+    name: "&eDiversen"
+    icon: CHEST
+    slot: 29
+    description:
+      - "&7Handige spullen voor onderweg."
+    items:
+      TORCH: { amount: 16, buy: 32, sell: -1 }
+      BREAD: { amount: 8, buy: 48, sell: 8 }
+      COOKED_BEEF: { amount: 8, buy: 80, sell: 12 }
+      BUCKET: { amount: 1, buy: 120, sell: -1 }
+      HOPPER: { amount: 1, buy: 600, sell: -1 }
+      CHEST: { amount: 1, buy: 20, sell: -1 }
+      FURNACE: { amount: 1, buy: 30, sell: -1 }
+      CRAFTING_TABLE: { amount: 1, buy: 20, sell: -1 }
+      NAME_TAG: { amount: 1, buy: 500, sell: -1 }
+      SADDLE: { amount: 1, buy: 400, sell: -1 }
+      PAPER: { amount: 16, buy: 48, sell: 6 }
+      BOOK: { amount: 4, buy: 80, sell: 10 }
+
+  speciaal:
+    name: "&dSpeciaal"
+    icon: NETHER_STAR
+    slot: 33
+    description:
+      - "&7Zeldzame blokken die je op een"
+      - "&7eiland niet zomaar vindt."
+    items:
+      MYCELIUM: { amount: 1, buy: 500, sell: -1 }
+      PODZOL: { amount: 4, buy: 300, sell: -1 }
+      MOSS_BLOCK: { amount: 8, buy: 200, sell: -1 }
+      SOUL_SAND: { amount: 8, buy: 400, sell: -1 }
+      NETHERRACK: { amount: 16, buy: 200, sell: 4 }
+      END_STONE: { amount: 16, buy: 600, sell: -1 }
+      PRISMARINE: { amount: 8, buy: 400, sell: -1 }
+      SPONGE: { amount: 1, buy: 1500, sell: -1 }
+      SHULKER_SHELL: { amount: 1, buy: 5000, sell: -1 }
+      ELYTRA: { amount: 1, buy: 50000, sell: -1 }
+      NETHER_STAR: { amount: 1, buy: 25000, sell: -1 }
+      BEACON: { amount: 1, buy: 40000, sell: -1 }
