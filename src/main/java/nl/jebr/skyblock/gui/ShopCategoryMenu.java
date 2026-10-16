@@ -141,8 +141,23 @@ public class ShopCategoryMenu extends Menu {
                 .build();
     }
 
-    private void click(InventoryClickEvent event, ShopItem item) {
+    private void click(InventoryClickEvent event, ShopItem clicked) {
         ShopManager shop = plugin.getShopManager();
+        // Na /isadmin reload kunnen prijzen veranderd of het item verdwenen zijn: actuele versie opzoeken
+        ShopItem item = null;
+        ShopCategory category = shop.getCategory(categoryId);
+        if (category != null) {
+            for (ShopItem candidate : category.getItems()) {
+                if (candidate.getId().equals(clicked.getId())) {
+                    item = candidate;
+                    break;
+                }
+            }
+        }
+        if (item == null) {
+            refresh();
+            return;
+        }
         ClickType click = event.getClick();
         switch (click) {
             case LEFT -> shop.buy(viewer, item, 1);

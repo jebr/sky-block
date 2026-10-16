@@ -80,6 +80,12 @@ public class IslandBuilder {
                     Block block = world.getBlockAt(x + dx, y + dy, z + dz);
                     if (block.getType().isAir()) {
                         block.setType(Material.OAK_LEAVES, false);
+                        // Zonder physics blijft de afstand op 7 staan en vergaan de bladeren vanzelf
+                        // (de speler verliest dan zijn eerste saplings); daarom vast zetten
+                        if (block.getBlockData() instanceof org.bukkit.block.data.type.Leaves leaves) {
+                            leaves.setPersistent(true);
+                            block.setBlockData(leaves, false);
+                        }
                     }
                 }
             }

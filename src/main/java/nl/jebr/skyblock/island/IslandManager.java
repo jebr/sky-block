@@ -404,6 +404,11 @@ public class IslandManager {
     }
 
     private void teleportSafely(Player player, Location target, Island island) {
+        if (island.getWorld() == null) {
+            // Wereld niet geladen (bijv. hernoemd in de config): niet crashen maar naar de spawn
+            teleportToSpawn(player);
+            return;
+        }
         Location destination = findSafe(target, island);
         destination.getChunk().load(true);
         player.setFallDistance(0);

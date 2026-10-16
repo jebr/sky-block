@@ -84,6 +84,11 @@ public class MembersMenu extends Menu {
 
     private void click(InventoryClickEvent event, UUID target) {
         Messages messages = plugin.getMessages();
+        if (plugin.getIslandManager().getIsland(island.getId()) == null) {
+            messages.send(viewer, "general.no-island");
+            MainMenu.closeThen(plugin, viewer, null);
+            return;
+        }
         IslandRole viewerRole = island.getRole(viewer.getUniqueId());
         IslandRole targetRole = island.getRole(target);
         if (target.equals(viewer.getUniqueId()) || targetRole == IslandRole.OWNER || targetRole == IslandRole.VISITOR) {
@@ -128,6 +133,10 @@ public class MembersMenu extends Menu {
     private void kick(UUID target, String name) {
         Messages messages = plugin.getMessages();
         // Opnieuw controleren: de situatie kan veranderd zijn tijdens het bevestigen
+        if (plugin.getIslandManager().getIsland(island.getId()) == null) {
+            messages.send(viewer, "general.no-island");
+            return;
+        }
         IslandRole viewerRole = island.getRole(viewer.getUniqueId());
         IslandRole targetRole = island.getRole(target);
         boolean allowed = targetRole != IslandRole.OWNER && targetRole != IslandRole.VISITOR

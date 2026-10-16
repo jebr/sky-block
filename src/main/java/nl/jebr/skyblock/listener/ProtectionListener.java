@@ -719,6 +719,9 @@ public class ProtectionListener implements Listener {
         if (entity instanceof Animals) {
             return Need.ANIMALS;
         }
+        if (entity instanceof AbstractVillager) {
+            return Need.FREE; // villagers zijn ook InventoryHolder, maar handelen blijft vrij
+        }
         if (entity instanceof InventoryHolder) {
             return Need.CONTAINERS; // minecart met kist, kistboot, hopper-minecart
         }

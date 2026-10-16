@@ -232,6 +232,11 @@ public class MainMenu extends Menu {
 
     private void toggleLock(Island island) {
         Messages messages = plugin.getMessages();
+        if (plugin.getIslandManager().getIsland(island.getId()) == null) {
+            messages.send(viewer, "general.no-island");
+            closeThen(plugin, viewer, null);
+            return;
+        }
         if (!island.getRole(viewer.getUniqueId()).isAtLeast(IslandRole.CO_OWNER)) {
             messages.send(viewer, "general.role-too-low", "{role}", IslandRole.CO_OWNER.getDisplayName());
             return;
@@ -239,6 +244,19 @@ public class MainMenu extends Menu {
         boolean locked = !island.isLocked();
         island.setLocked(locked);
         messages.send(viewer, locked ? "menus.main.locked" : "menus.main.unlocked");
+        if (locked) {
+            // Net als bij /is lock: bezoekers die nu op het eiland staan naar de spawn sturen
+            int radius = plugin.getIslandManager().getRadius(island);
+            for (Player online : Bukkit.getOnlinePlayers()) {
+                if (island.isMember(online.getUniqueId()) || online.hasPermission("skyblock.bypass")) {
+                    continue;
+                }
+                if (island.contains(online.getLocation(), radius)) {
+                    plugin.getIslandManager().teleportToSpawn(online);
+                    messages.send(online, "commands.lock.removed-visitor");
+                }
+            }
+        }
         refresh();
     }
 

@@ -59,6 +59,11 @@ public class SettingsMenu extends Menu {
 
     private void toggle(IslandFlag flag) {
         Messages messages = plugin.getMessages();
+        if (plugin.getIslandManager().getIsland(island.getId()) == null) {
+            messages.send(viewer, "general.no-island");
+            MainMenu.closeThen(plugin, viewer, null);
+            return;
+        }
         if (!island.getRole(viewer.getUniqueId()).isAtLeast(IslandRole.CO_OWNER)) {
             messages.send(viewer, "general.role-too-low", "{role}", IslandRole.CO_OWNER.getDisplayName());
             return;

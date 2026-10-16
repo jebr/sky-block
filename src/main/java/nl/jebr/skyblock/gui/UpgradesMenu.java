@@ -129,6 +129,12 @@ public class UpgradesMenu extends Menu {
 
     private void upgrade(UpgradeType type) {
         Messages messages = plugin.getMessages();
+        // Het eiland kan sinds het openen van het menu gereset of verwijderd zijn: dan niet betalen
+        if (plugin.getIslandManager().getIsland(island.getId()) == null) {
+            messages.send(viewer, "general.no-island");
+            MainMenu.closeThen(plugin, viewer, null);
+            return;
+        }
         if (!island.getRole(viewer.getUniqueId()).isAtLeast(IslandRole.OWNER)) {
             messages.send(viewer, "general.role-too-low", "{role}", IslandRole.OWNER.getDisplayName());
             return;

@@ -296,7 +296,8 @@ public class ShopManager {
         player.updateInventory();
     }
 
+    /** Opbrengst naar beneden afronden op centen, zodat losse verkopen niet meer opleveren dan per stapel. */
     private static double round(double value) {
-        return Math.round(value * 100.0) / 100.0;
+        return Math.floor(value * 100.0 + 1e-6) / 100.0;
     }
 }

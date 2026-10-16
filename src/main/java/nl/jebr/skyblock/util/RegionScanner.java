@@ -101,7 +101,9 @@ public final class RegionScanner {
                                 if (z < minZ || z > maxZ) {
                                     continue;
                                 }
-                                int top = Math.min(maxY - 1, snapshot.getHighestBlockYAt(lx, lz));
+                                // De hele hoogte scannen: de heightmap (MOTION_BLOCKING) slaat bloemen,
+                                // fakkels, bordjes, suikerriet e.d. bovenop over, die dan na een reset bleven zweven
+                                int top = maxY - 1;
                                 for (int y = minY; y <= top; y++) {
                                     Material type = snapshot.getBlockType(lx, y, lz);
                                     if (type.isAir()) {

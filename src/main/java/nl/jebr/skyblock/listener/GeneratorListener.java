@@ -98,6 +98,8 @@ public class GeneratorListener implements Listener {
             if (island == null) {
                 return;
             }
+            // Meerdere stroom-events voor hetzelfde blok plannen meerdere controles: maar één keer rollen
+            markHandled(to);
             Material result = plugin.getUpgradeManager().rollGeneratorBlock(island);
             if (result != null && result != Material.COBBLESTONE && result.isBlock()) {
                 to.setType(result);
@@ -134,7 +136,8 @@ public class GeneratorListener implements Listener {
     }
 
     private boolean isHandled(Block block) {
-        Long time = handled.remove(block);
+        // Niet verwijderen: meerdere vangnet-controles voor hetzelfde blok in één tick zouden anders dubbel rollen
+        Long time = handled.get(block);
         return time != null && System.currentTimeMillis() - time <= HANDLED_TTL;
     }
 }
